@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="430dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="30s"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:layout_marginTop="378dp"
+        android:onClick="play"
+        android:text="Play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="150dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="311dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginRight="111dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="X+Y"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timerTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/questionTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:layout_marginBottom="430dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:text="0/20"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/numberGrid"
+        android:layout_width="368dp"
+        android:layout_height="281dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:columnCount="2"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerTextView"
+        app:rowCount="2">
+
+        <TextView
+            android:id="@+id/numberText1"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:onClick="nextChallenge"
+            android:tag="0"
+            android:text="A"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/numberText2"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:onClick="nextChallenge"
+            android:tag="1"
+            android:text="B"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/numberText3"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:onClick="nextChallenge"
+            android:tag="2"
+            android:text="C"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/numberText4"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:onClick="nextChallenge"
+            android:tag="3"
+            android:text="D"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+    </android.support.v7.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+</android.support.constraint.ConstraintLayout>
